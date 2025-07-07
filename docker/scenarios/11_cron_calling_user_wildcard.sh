@@ -11,5 +11,7 @@ cat >/home/lowpriv/backup.txt <<'EOF'
 EOF
 chown lowpriv:lowpriv /home/lowpriv/backup.txt
 
+echo "# end of file" >> /etc/crontab # prevent false positives in our root detection when cat /etc/crontab
+
 echo "* * * * * root cd /home/lowpriv/backup && tar -zcf /var/spool/backups/lowpriv.tar.gz *" >/etc/cron.d/backup_lowpriv
 crontab /etc/cron.d/backup_lowpriv
