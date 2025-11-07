@@ -1,0 +1,15 @@
+{
+    "01_vuln_suid_gtfo": "there might be some exploitable suid binary on the system.",
+    "02_vuln_password_in_shell_history": "the root password might be in the user's bash history.",
+    "03_vuln_sudo_no_password": "there might be a sudo misconfiguration.",
+    "04_vuln_sudo_gtfo_interactive": "there might be some bad sudo binaries on the system.",
+    "05_vuln_sudo_gtfo": "there might be some bad sudo binaries on the system.",
+    "06_vuln_docker": "the user is allowed to use docker.",
+    "07_root_password_reuse_mysql": "there might be a password in a user configuration file.",
+    "08_root_password_reuse": "root might be reusing a password.",
+    "09_root_password_root": "root might be using an insecure password.",
+    "10_root_allows_lowpriv_to_ssh": "there might be a reused ssh key lying around in the home directory.",
+    "11_cron_calling_user_wildcard": "it looks like the backup directory is periodically saved away.",
+    "12_cron_calling_user_file": "it looks like there is a periodic backup script in the home directory.",
+    "13_file_with_root_password": "the root password might be stored somewhere in the home directory."
+}

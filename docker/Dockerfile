@@ -30,7 +30,9 @@ COPY scenarios/${SETUP_SCRIPT} /tmp/setup.sh
 RUN bash /tmp/setup.sh && rm /tmp/setup.sh
 
 # 4 - prepare SSH daemon
-RUN mkdir /var/run/sshd
+RUN mkdir /var/run/sshd && \
+    echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && \
+    echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 EXPOSE 22
 
 CMD ["/usr/sbin/sshd","-D","-e"]
